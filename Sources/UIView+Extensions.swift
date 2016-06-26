@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-let view = UIView()
-
 extension UIView {
     
     @discardableResult func layout(equalTo size: CGSize) -> [NSLayoutConstraint] {
+        prepareForConstraints()
+        
         let widthConstraint = layoutWidth(size.width)
         let heightConstraint = layoutHeight(size.height)
         return [widthConstraint, heightConstraint]
