@@ -14,12 +14,12 @@ extension UIView {
     @discardableResult func layout(equalTo size: CGSize) -> [NSLayoutConstraint] {
         prepareForConstraints()
         
-        let widthConstraint = layoutWidth(size.width)
-        let heightConstraint = layoutHeight(size.height)
+        let widthConstraint = layout(width: size.width)
+        let heightConstraint = layout(height: size.height)
         return [widthConstraint, heightConstraint]
     }
     
-    @discardableResult public func constrainWidth(_ width: CGFloat) -> NSLayoutConstraint {
+    @discardableResult public func constrain(width: CGFloat) -> NSLayoutConstraint {
         prepareForConstraints()
         
         let constraint = NSLayoutConstraint(item: self, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: width)
@@ -27,13 +27,13 @@ extension UIView {
         return constraint
     }
     
-    @discardableResult public func layoutWidth(_ width: CGFloat) -> NSLayoutConstraint {
-        let constraint = constrainWidth(width)
+    @discardableResult public func layout(width: CGFloat) -> NSLayoutConstraint {
+        let constraint = constrain(width: width)
         constraint.isActive = true
         return constraint
     }
     
-    @discardableResult public func constrainHeight(_ height: CGFloat) -> NSLayoutConstraint {
+    @discardableResult public func constrain(height: CGFloat) -> NSLayoutConstraint {
         prepareForConstraints()
         
         let constraint = NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: height)
@@ -41,13 +41,13 @@ extension UIView {
         return constraint
     }
     
-    @discardableResult public func layoutHeight(_ height: CGFloat) -> NSLayoutConstraint {
-        let constraint = constrainHeight(height)
+    @discardableResult public func layout(height: CGFloat) -> NSLayoutConstraint {
+        let constraint = constrain(height: height)
         constraint.isActive = true
         return constraint
     }
     
-    @discardableResult public func constrainWidthEqualToView(_ view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
+    @discardableResult public func constrainWidth(equalToView view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
         prepareForConstraints()
         
         let constraint = NSLayoutConstraint(item: self, attribute: .width, relatedBy: .equal, toItem: view, attribute: .width, multiplier: 1.0, constant: offset)
@@ -55,13 +55,13 @@ extension UIView {
         return constraint
     }
     
-    @discardableResult public func layoutWidthEqualToView(_ view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
-        let constraint = constrainWidthEqualToView(view, multiplier: 1, offset: offset)
+    @discardableResult public func layoutWidth(equalToView view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
+        let constraint = constrainWidth(equalToView: view, multiplier: 1, offset: offset)
         constraint.isActive = true
         return constraint
     }
     
-    @discardableResult public func constrainWidthEqualToView(_ view: UIView, multiplier: CGFloat = 1, offset: CGFloat = 0) -> NSLayoutConstraint {
+    @discardableResult public func constrainWidth(equalToView view: UIView, multiplier: CGFloat = 1, offset: CGFloat = 0) -> NSLayoutConstraint {
         prepareForConstraints()
         
         let constraint = NSLayoutConstraint(item: self, attribute: .width, relatedBy: .equal, toItem: view, attribute: .width, multiplier: multiplier, constant: offset)
@@ -69,32 +69,32 @@ extension UIView {
         return constraint
     }
     
-    @discardableResult public func layoutWidthEqualToView(_ view: UIView, multiplier: CGFloat = 1, offset: CGFloat = 0) -> NSLayoutConstraint {
-        let constraint = constrainWidthEqualToView(view, multiplier: multiplier, offset: offset)
+    @discardableResult public func layoutWidth(equalToView view: UIView, multiplier: CGFloat = 1, offset: CGFloat = 0) -> NSLayoutConstraint {
+        let constraint = constrainWidth(equalToView: view, multiplier: multiplier, offset: offset)
         constraint.isActive = true
         return constraint
     }
     
-    @discardableResult public func constrainHeightEqualToView(_ view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
+    @discardableResult public func constrainHeight(equalToView view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
         prepareForConstraints()
         
-        return constrainHeightEqualToView(view, multiplier: 1, offset: offset)
+        return constrainHeight(equalToView: view, multiplier: 1, offset: offset)
     }
     
-    @discardableResult public func constrainHeightEqualToView(_ view: UIView, multiplier: CGFloat = 1, offset: CGFloat = 0) -> NSLayoutConstraint {
+    @discardableResult public func constrainHeight(equalToView view: UIView, multiplier: CGFloat = 1, offset: CGFloat = 0) -> NSLayoutConstraint {
         let constraint = NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: view, attribute: .height, multiplier: multiplier, constant: offset)
         constraint.identifier = "\(self).Height == \(view).Height + \(offset)"
         return constraint
     }
     
-    @discardableResult public func layoutHeightEqualToView(_ view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
-        let constraint = constrainHeightEqualToView(view, withOffset: offset)
+    @discardableResult public func layoutHeight(equalToView view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
+        let constraint = constrainHeight(equalToView: view, withOffset: offset)
         constraint.isActive = true
         return constraint
     }
     
-    @discardableResult public func layoutHeightEqualToView(_ view: UIView, multiplier: CGFloat = 1, offset: CGFloat = 0) -> NSLayoutConstraint {
-        let constraint = constrainHeightEqualToView(view, multiplier: multiplier, offset: offset)
+    @discardableResult public func layoutHeight(equalToView view: UIView, multiplier: CGFloat = 1, offset: CGFloat = 0) -> NSLayoutConstraint {
+        let constraint = constrainHeight(equalToView: view, multiplier: multiplier, offset: offset)
         constraint.isActive = true
         return constraint
     }
