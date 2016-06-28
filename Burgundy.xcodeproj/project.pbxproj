@@ -600,6 +600,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Sources/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.hecho.Burgundy;
 				PRODUCT_NAME = Burgundy;
@@ -619,6 +620,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Sources/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.hecho.Burgundy;
 				PRODUCT_NAME = Burgundy;
@@ -808,6 +810,7 @@
 				D27FC0151D1F16DA007FD427 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D27FC0161D1F16DA007FD427 /* Build configuration list for PBXNativeTarget "BurgundyTests-iOS" */ = {
 			isa = XCConfigurationList;
@@ -816,6 +819,7 @@
 				D27FC0181D1F16DA007FD427 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D27FC02F1D1F1735007FD427 /* Build configuration list for PBXNativeTarget "Burgundy-macOS" */ = {
 			isa = XCConfigurationList;
@@ -824,6 +828,7 @@
 				D27FC0311D1F1735007FD427 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D27FC0321D1F1735007FD427 /* Build configuration list for PBXNativeTarget "BurgundyTests-macOS" */ = {
 			isa = XCConfigurationList;
@@ -832,6 +837,7 @@
 				D27FC0341D1F1735007FD427 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D27FC04D1D1F17F1007FD427 /* Build configuration list for PBXNativeTarget "Burgundy-tvOS" */ = {
 			isa = XCConfigurationList;
@@ -840,6 +846,7 @@
 				D27FC04F1D1F17F1007FD427 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D27FC0501D1F17F1007FD427 /* Build configuration list for PBXNativeTarget "BurgundyTests-tvOS" */ = {
 			isa = XCConfigurationList;
@@ -848,6 +855,7 @@
 				D27FC0521D1F17F1007FD427 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
