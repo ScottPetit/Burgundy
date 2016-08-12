@@ -101,23 +101,23 @@ extension UIView {
     
     //MARK: Edges
     
-    @discardableResult public func constrainEdgesToSuperview(_ insets: UIEdgeInsets = .zero) -> [NSLayoutConstraint] {
-        let top = constrainTopToSuperview(insets.top)
-        let right = constrainRightToSuperview(insets.right)
-        let bottom = constrainBottomToSuperview(insets.bottom)
-        let left = constrainLeftToSuperview(insets.left)
+    @discardableResult public func constrainEdgesToSuperview(insets: UIEdgeInsets = .zero) -> [NSLayoutConstraint] {
+        let top = constrainTopToSuperview(offset: insets.top)
+        let right = constrainRightToSuperview(offset: insets.right)
+        let bottom = constrainBottomToSuperview(offset: insets.bottom)
+        let left = constrainLeftToSuperview(offset: insets.left)
         return [top, right, bottom, left]
     }
     
-    @discardableResult public func layoutEdgesToSuperview(_ insets: UIEdgeInsets = .zero) -> [NSLayoutConstraint] {
-        let top = layoutTopToSuperview(insets.top)
-        let right = layoutRightToSuperview(insets.right)
-        let bottom = layoutBottomToSuperview(insets.bottom)
-        let left = layoutLeftToSuperview(insets.left)
+    @discardableResult public func layoutEdgesToSuperview(insets: UIEdgeInsets = .zero) -> [NSLayoutConstraint] {
+        let top = layoutTopToSuperview(offset: insets.top)
+        let right = layoutRightToSuperview(offset: insets.right)
+        let bottom = layoutBottomToSuperview(offset: insets.bottom)
+        let left = layoutLeftToSuperview(offset: insets.left)
         return [top, right, bottom, left]
     }
     
-    @discardableResult public func constrainLeftToView(_ view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
+    @discardableResult public func constrainLeft(toView view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
         prepareForConstraints()
         
         let constraint = NSLayoutConstraint(item: self, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1.0, constant: offset)
@@ -125,21 +125,21 @@ extension UIView {
         return constraint
     }
     
-    @discardableResult public func layoutLeftToView(_ view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
-        let constraint = constrainLeftToView(view, withOffset: offset)
+    @discardableResult public func layoutLeft(toView view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
+        let constraint = constrainLeft(toView: view, withOffset: offset)
         constraint.isActive = true
         return constraint
     }
     
-    @discardableResult public func constrainLeftToSuperview(_ offset: CGFloat = 0) -> NSLayoutConstraint {
-        return constrainLeftToView(superview!, withOffset: offset)
+    @discardableResult public func constrainLeftToSuperview(offset: CGFloat = 0) -> NSLayoutConstraint {
+        return constrainLeft(toView: superview!, withOffset: offset)
     }
     
-    @discardableResult public func layoutLeftToSuperview(_ offset: CGFloat = 0) -> NSLayoutConstraint {
-        return layoutLeftToView(superview!, withOffset: offset)
+    @discardableResult public func layoutLeftToSuperview(offset: CGFloat = 0) -> NSLayoutConstraint {
+        return layoutLeft(toView: superview!, withOffset: offset)
     }
     
-    @discardableResult public func constrainTopToView(_ view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
+    @discardableResult public func constrainTop(toView view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
         prepareForConstraints()
         
         let constraint = NSLayoutConstraint(item: self, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1.0, constant: offset)
@@ -147,21 +147,21 @@ extension UIView {
         return constraint
     }
     
-    @discardableResult public func layoutTopToView(_ view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
-        let constraint = constrainTopToView(view, withOffset: offset)
+    @discardableResult public func layoutTop(toView view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
+        let constraint = constrainTop(toView: view, withOffset: offset)
         constraint.isActive = true
         return constraint
     }
     
-    @discardableResult public func constrainTopToSuperview(_ offset: CGFloat = 0) -> NSLayoutConstraint {
-        return constrainTopToView(superview!, withOffset: offset)
+    @discardableResult public func constrainTopToSuperview(offset: CGFloat = 0) -> NSLayoutConstraint {
+        return constrainTop(toView: superview!, withOffset: offset)
     }
     
-    @discardableResult public func layoutTopToSuperview(_ offset: CGFloat = 0) -> NSLayoutConstraint {
-        return layoutTopToView(superview!, withOffset: offset)
+    @discardableResult public func layoutTopToSuperview(offset: CGFloat = 0) -> NSLayoutConstraint {
+        return layoutTop(toView: superview!, withOffset: offset)
     }
     
-    @discardableResult public func constrainRightToView(_ view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
+    @discardableResult public func constrainRight(toView view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
         prepareForConstraints()
         
         let constraint = NSLayoutConstraint(item: self, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1.0, constant: offset)
@@ -169,21 +169,21 @@ extension UIView {
         return constraint
     }
     
-    @discardableResult public func layoutRightToView(_ view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
-        let constraint = constrainRightToView(view, withOffset: offset)
+    @discardableResult public func layoutRight(toView view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
+        let constraint = constrainRight(toView: view, withOffset: offset)
         constraint.isActive = true
         return constraint
     }
     
-    @discardableResult public func constrainRightToSuperview(_ offset: CGFloat = 0) -> NSLayoutConstraint {
-        return constrainRightToView(superview!, withOffset: offset)
+    @discardableResult public func constrainRightToSuperview(offset: CGFloat = 0) -> NSLayoutConstraint {
+        return constrainRight(toView: superview!, withOffset: offset)
     }
     
-    @discardableResult public func layoutRightToSuperview(_ offset: CGFloat = 0) -> NSLayoutConstraint {
-        return layoutRightToView(superview!, withOffset: offset)
+    @discardableResult public func layoutRightToSuperview(offset: CGFloat = 0) -> NSLayoutConstraint {
+        return layoutRight(toView: superview!, withOffset: offset)
     }
     
-    @discardableResult public func constrainBottomToView(_ view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
+    @discardableResult public func constrainBottom(toView view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
         prepareForConstraints()
         
         let constraint = NSLayoutConstraint(item: self, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1.0, constant: offset)
@@ -191,23 +191,23 @@ extension UIView {
         return constraint
     }
     
-    @discardableResult public func layoutBottomToView(_ view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
-        let constraint = constrainBottomToView(view, withOffset: offset)
+    @discardableResult public func layoutBottom(toView view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
+        let constraint = constrainBottom(toView: view, withOffset: offset)
         constraint.isActive = true
         return constraint
     }
     
-    @discardableResult public func constrainBottomToSuperview(_ offset: CGFloat = 0) -> NSLayoutConstraint {
-        return constrainBottomToView(superview!, withOffset: offset)
+    @discardableResult public func constrainBottomToSuperview(offset: CGFloat = 0) -> NSLayoutConstraint {
+        return constrainBottom(toView: superview!, withOffset: offset)
     }
     
-    @discardableResult public func layoutBottomToSuperview(_ offset: CGFloat = 0) -> NSLayoutConstraint {
-        return layoutBottomToView(superview!, withOffset: offset)
+    @discardableResult public func layoutBottomToSuperview(offset: CGFloat = 0) -> NSLayoutConstraint {
+        return layoutBottom(toView: superview!, withOffset: offset)
     }
     
     //MARK: Center
     
-    @discardableResult public func constrainCenterXToView(_ view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
+    @discardableResult public func constrainCenterX(toView view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
         prepareForConstraints()
         
         let constraint = NSLayoutConstraint(item: self, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: offset)
@@ -215,24 +215,24 @@ extension UIView {
         return constraint
     }
     
-    @discardableResult public func layoutCenterXToView(_ view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
-        let constraint = constrainCenterXToView(view, withOffset: offset)
+    @discardableResult public func layoutCenterX(toView view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
+        let constraint = constrainCenterX(toView: view, withOffset: offset)
         constraint.isActive = true
         return constraint
     }
     
-    @discardableResult public func constrainCenterXToSuperview(_ offset: CGFloat = 0) -> NSLayoutConstraint {
-        let constraint = constrainCenterXToView(superview!, withOffset: offset)
+    @discardableResult public func constrainCenterXToSuperview(offset: CGFloat = 0) -> NSLayoutConstraint {
+        let constraint = constrainCenterX(toView: superview!, withOffset: offset)
         return constraint
     }
     
-    @discardableResult public func layoutCenterXToSuperview(_ offset: CGFloat = 0) -> NSLayoutConstraint {
-        let constraint = constrainCenterXToSuperview(offset)
+    @discardableResult public func layoutCenterXToSuperview(offset: CGFloat = 0) -> NSLayoutConstraint {
+        let constraint = constrainCenterXToSuperview(offset: offset)
         constraint.isActive = true
         return constraint
     }
     
-    @discardableResult public func constrainCenterYToView(_ view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
+    @discardableResult public func constrainCenterY(toView view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
         prepareForConstraints()
         
         let constraint = NSLayoutConstraint(item: self, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: offset)
@@ -240,24 +240,24 @@ extension UIView {
         return constraint
     }
     
-    @discardableResult public func layoutCenterYToView(_ view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
-        let constraint = constrainCenterYToView(view, withOffset: offset)
+    @discardableResult public func layoutCenterY(toView view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
+        let constraint = constrainCenterY(toView: view, withOffset: offset)
         constraint.isActive = true
         return constraint
     }
     
-    @discardableResult public func constrainCenterYToSuperview(_ offset: CGFloat = 0) -> NSLayoutConstraint {
-        let constraint = constrainCenterYToView(superview!, withOffset: offset)
+    @discardableResult public func constrainCenterYToSuperview(offset: CGFloat = 0) -> NSLayoutConstraint {
+        let constraint = constrainCenterY(toView: superview!, withOffset: offset)
         return constraint
     }
     
-    @discardableResult public func layoutCenterYToSuperview(_ offset: CGFloat = 0) -> NSLayoutConstraint {
-        let constraint = constrainCenterYToView(superview!, withOffset: offset)
+    @discardableResult public func layoutCenterYToSuperview(offset: CGFloat = 0) -> NSLayoutConstraint {
+        let constraint = constrainCenterY(toView: superview!, withOffset: offset)
         constraint.isActive = true
         return constraint
     }
     
-    @discardableResult public func constrainTopToSiblingView(_ view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
+    @discardableResult public func constrainTop(toSiblingView view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
         prepareForConstraints()
         
         let constraint = NSLayoutConstraint(item: self, attribute: .top, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1.0, constant: offset)
@@ -265,13 +265,13 @@ extension UIView {
         return constraint
     }
     
-    @discardableResult public func layoutTopToSiblingView(_ view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
-        let constraint = constrainTopToSiblingView(view, withOffset: offset)
+    @discardableResult public func layoutTop(toSiblingView view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
+        let constraint = constrainTop(toSiblingView: view, withOffset: offset)
         constraint.isActive = true
         return constraint
     }
     
-    @discardableResult public func constrainLeftToSiblingView(_ view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
+    @discardableResult public func constrainLeft(toSiblingView view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
         prepareForConstraints()
         
         let constraint = NSLayoutConstraint(item: self, attribute: .left, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1.0, constant: offset)
@@ -279,13 +279,13 @@ extension UIView {
         return constraint
     }
     
-    @discardableResult public func layoutLeftToSiblingView(_ view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
-        let constraint = constrainLeftToSiblingView(view, withOffset: offset)
+    @discardableResult public func layoutLeft(toSiblingView view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
+        let constraint = constrainLeft(toSiblingView: view, withOffset: offset)
         constraint.isActive = true
         return constraint
     }
     
-    @discardableResult public func constrainBottomToSiblingView(_ view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
+    @discardableResult public func constrainBottom(toSiblingView view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
         prepareForConstraints()
         
         let constraint = NSLayoutConstraint(item: self, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1.0, constant: offset)
@@ -293,8 +293,8 @@ extension UIView {
         return constraint
     }
     
-    @discardableResult public func layoutBottomToSiblingView(_ view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
-        let constraint = constrainBottomToSiblingView(view, withOffset: offset)
+    @discardableResult public func layoutBottom(toSiblingView view: UIView, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
+        let constraint = constrainBottom(toSiblingView: view, withOffset: offset)
         constraint.isActive = true
         return constraint
     }
