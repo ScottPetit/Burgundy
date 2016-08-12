@@ -101,7 +101,7 @@ extension UIView {
     
     //MARK: Edges
     
-    @discardableResult public func constrainEdgesToSuperview(_ insets: UIEdgeInsets = UIEdgeInsetsZero) -> [NSLayoutConstraint] {
+    @discardableResult public func constrainEdgesToSuperview(_ insets: UIEdgeInsets = .zero) -> [NSLayoutConstraint] {
         let top = constrainTopToSuperview(insets.top)
         let right = constrainRightToSuperview(insets.right)
         let bottom = constrainBottomToSuperview(insets.bottom)
@@ -109,7 +109,7 @@ extension UIView {
         return [top, right, bottom, left]
     }
     
-    @discardableResult public func layoutEdgesToSuperview(_ insets: UIEdgeInsets = UIEdgeInsetsZero) -> [NSLayoutConstraint] {
+    @discardableResult public func layoutEdgesToSuperview(_ insets: UIEdgeInsets = .zero) -> [NSLayoutConstraint] {
         let top = layoutTopToSuperview(insets.top)
         let right = layoutRightToSuperview(insets.right)
         let bottom = layoutBottomToSuperview(insets.bottom)
