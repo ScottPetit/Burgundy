@@ -11,14 +11,6 @@ import UIKit
 
 extension UIView {
     
-    @discardableResult func layout(equalTo size: CGSize) -> [NSLayoutConstraint] {
-        prepareForConstraints()
-        
-        let widthConstraint = layout(width: size.width)
-        let heightConstraint = layout(height: size.height)
-        return [widthConstraint, heightConstraint]
-    }
-    
     @discardableResult public func constrain(width: CGFloat) -> NSLayoutConstraint {
         prepareForConstraints()
         
@@ -97,6 +89,21 @@ extension UIView {
         let constraint = constrainHeight(equalToView: view, multiplier: multiplier, offset: offset)
         constraint.isActive = true
         return constraint
+    }
+    
+    @discardableResult public func layout(equalTo view: UIView) -> [NSLayoutConstraint] {
+        let top = layoutTop(toView: view)
+        let right = layoutRight(toView: view)
+        let bottom = layoutBottom(toView: view)
+        let left = layoutLeft(toView: view)
+        
+        return [top, right, bottom, left]
+    }
+    
+    @discardableResult public func layout(centerIn view: UIView) -> [NSLayoutConstraint] {
+        let centerX = layoutCenterX(toView: view)
+        let centerY = layoutCenterY(toView: view)
+        return [centerX, centerY]
     }
     
     //MARK: Edges

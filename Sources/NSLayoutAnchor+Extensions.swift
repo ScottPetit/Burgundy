@@ -73,8 +73,7 @@ extension NSLayoutDimension {
         constraint.isActive = true
         return constraint
     }
-    
-    
+        
     @discardableResult public func layout(equalTo constant: CGFloat) -> NSLayoutConstraint {
         let constraint = self.constraint(equalToConstant: constant)
         constraint.isActive = true
