@@ -284,7 +284,7 @@ extension UIView {
         self.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    func layout<T>(_ anchor: NSLayoutAnchor<T>, to otherAnchor: NSLayoutAnchor<T>, constraint: LayoutAnchor) -> NSLayoutConstraint {
+    func layout(_ anchor: NSLayoutYAxisAnchor, to otherAnchor: NSLayoutYAxisAnchor, constraint: LayoutAnchor) -> NSLayoutConstraint {
         let newConstraint: NSLayoutConstraint
         switch constraint.equality {
         case .equal:
@@ -297,6 +297,31 @@ extension UIView {
         return newConstraint
     }
     
+    func layout(_ anchor: NSLayoutXAxisAnchor, to otherAnchor: NSLayoutXAxisAnchor, constraint: LayoutAnchor) -> NSLayoutConstraint {
+        let newConstraint: NSLayoutConstraint
+        switch constraint.equality {
+        case .equal:
+            newConstraint = anchor.layout(equalTo: otherAnchor, constant: constraint.constant)
+        case .lessThanOrEqual:
+            newConstraint = anchor.layout(lessThanOrEqualTo: otherAnchor, constant: constraint.constant)
+        case .greaterThanOrEqual:
+            newConstraint = anchor.layout(greaterThanOrEqualTo: otherAnchor, constant: constraint.constant)
+        }
+        return newConstraint
+    }
+    
+    func layout(_ anchor: NSLayoutDimension, to otherAnchor: NSLayoutDimension, constraint: LayoutAnchor) -> NSLayoutConstraint {
+        let newConstraint: NSLayoutConstraint
+        switch constraint.equality {
+        case .equal:
+            newConstraint = anchor.layout(equalTo: otherAnchor, multiplier: constraint.multiplier, constant: constraint.constant)
+        case .lessThanOrEqual:
+            newConstraint = anchor.layout(lessThanOrEqualTo: otherAnchor, multiplier: constraint.constant, constant: constraint.constant)
+        case .greaterThanOrEqual:
+            newConstraint = anchor.layout(greaterThanOrEqualTo: otherAnchor, multiplier: constraint.constant, constant: constraint.constant)
+        }
+        return newConstraint
+    }
     
     @discardableResult func layout(constraints: [LayoutAnchor]) -> [LayoutConstraint] {
         prepareForConstraints()
