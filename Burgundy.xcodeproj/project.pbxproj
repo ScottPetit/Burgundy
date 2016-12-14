@@ -21,6 +21,9 @@
 		D27FC05E1D1F19A9007FD427 /* NSLayoutAnchor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27FC05B1D1F19A2007FD427 /* NSLayoutAnchor+Extensions.swift */; };
 		D27FC0601D1F1B65007FD427 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27FC05F1D1F1B65007FD427 /* UIView+Extensions.swift */; };
 		D27FC0611D1F1B68007FD427 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27FC05F1D1F1B65007FD427 /* UIView+Extensions.swift */; };
+		D2A39AF01E01612500491B1D /* Burgundy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A39AEF1E01612500491B1D /* Burgundy.swift */; };
+		D2A39AF11E01612500491B1D /* Burgundy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A39AEF1E01612500491B1D /* Burgundy.swift */; };
+		D2A39AF21E01612500491B1D /* Burgundy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A39AEF1E01612500491B1D /* Burgundy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,7 @@
 		D27FC0591D1F1912007FD427 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D27FC05B1D1F19A2007FD427 /* NSLayoutAnchor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayoutAnchor+Extensions.swift"; sourceTree = "<group>"; };
 		D27FC05F1D1F1B65007FD427 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		D2A39AEF1E01612500491B1D /* Burgundy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Burgundy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,7 @@
 				D27FC0021D1F16DA007FD427 /* Burgundy.h */,
 				D27FC05B1D1F19A2007FD427 /* NSLayoutAnchor+Extensions.swift */,
 				D27FC05F1D1F1B65007FD427 /* UIView+Extensions.swift */,
+				D2A39AEF1E01612500491B1D /* Burgundy.swift */,
 				D27FC0581D1F1906007FD427 /* Supporting Files */,
 			);
 			path = Sources;
@@ -429,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D27FC0601D1F1B65007FD427 /* UIView+Extensions.swift in Sources */,
+				D2A39AF01E01612500491B1D /* Burgundy.swift in Sources */,
 				D27FC05C1D1F19A2007FD427 /* NSLayoutAnchor+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,6 +452,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D27FC05D1D1F19A8007FD427 /* NSLayoutAnchor+Extensions.swift in Sources */,
+				D2A39AF11E01612500491B1D /* Burgundy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +469,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D27FC0611D1F1B68007FD427 /* UIView+Extensions.swift in Sources */,
+				D2A39AF21E01612500491B1D /* Burgundy.swift in Sources */,
 				D27FC05E1D1F19A9007FD427 /* NSLayoutAnchor+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
