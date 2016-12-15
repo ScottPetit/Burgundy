@@ -83,11 +83,11 @@ public struct LayoutAnchor {
         return LayoutAnchor(anchor: .right(otherAnchor), constant: constant, equality: equality, multiplier: 1)
     }
     
-    public static func width(to otherAnchor: NSLayoutDimension?, constant: CGFloat = 0, equality: LayoutEquality = .equal, multiplier: CGFloat = 1) -> LayoutAnchor {
+    public static func width(to otherAnchor: NSLayoutDimension? = nil, constant: CGFloat = 0, equality: LayoutEquality = .equal, multiplier: CGFloat = 1) -> LayoutAnchor {
         return LayoutAnchor(anchor: .width(otherAnchor), constant: constant, equality: equality, multiplier: multiplier)
     }
     
-    public static func height(to otherAnchor: NSLayoutDimension?, constant: CGFloat = 0, equality: LayoutEquality = .equal, multiplier: CGFloat = 1) -> LayoutAnchor {
+    public static func height(to otherAnchor: NSLayoutDimension? = nil, constant: CGFloat = 0, equality: LayoutEquality = .equal, multiplier: CGFloat = 1) -> LayoutAnchor {
         return LayoutAnchor(anchor: .height(otherAnchor), constant: constant, equality: equality, multiplier: multiplier)
     }
     
