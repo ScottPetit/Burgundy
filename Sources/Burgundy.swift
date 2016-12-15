@@ -18,7 +18,7 @@ public enum LayoutEquality {
     case greaterThanOrEqual
 }
 
-enum LayoutConstraint {
+public enum LayoutConstraint {
     case top(NSLayoutConstraint)
     case left(NSLayoutConstraint)
     case bottom(NSLayoutConstraint)
@@ -28,7 +28,7 @@ enum LayoutConstraint {
     case centerX(NSLayoutConstraint)
     case centerY(NSLayoutConstraint)
     
-    var constraint: NSLayoutConstraint {
+    public var constraint: NSLayoutConstraint {
         switch self {
         case .top(let constraint):
             return constraint
@@ -50,7 +50,7 @@ enum LayoutConstraint {
     }
 }
 
-struct LayoutAnchor {
+public struct LayoutAnchor {
     
     enum Anchor {
         case top(NSLayoutYAxisAnchor)

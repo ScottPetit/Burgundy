@@ -310,7 +310,7 @@ extension UIView {
         return newConstraint
     }
     
-    func layout(_ anchor: NSLayoutDimension, to otherAnchor: NSLayoutDimension, constraint: LayoutAnchor) -> NSLayoutConstraint {
+    public func layout(_ anchor: NSLayoutDimension, to otherAnchor: NSLayoutDimension, constraint: LayoutAnchor) -> NSLayoutConstraint {
         let newConstraint: NSLayoutConstraint
         switch constraint.equality {
         case .equal:
@@ -323,7 +323,7 @@ extension UIView {
         return newConstraint
     }
     
-    @discardableResult func layout(constraints: [LayoutAnchor]) -> [LayoutConstraint] {
+    @discardableResult public func layout(constraints: [LayoutAnchor]) -> [LayoutConstraint] {
         prepareForConstraints()
         
         var finalConstraints: [LayoutConstraint] = []
