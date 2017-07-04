@@ -20,9 +20,11 @@ public enum LayoutEquality {
 
 public enum LayoutConstraint {
     case top(NSLayoutConstraint)
+    case leading(NSLayoutConstraint)
     case left(NSLayoutConstraint)
     case bottom(NSLayoutConstraint)
     case right(NSLayoutConstraint)
+    case trailing(NSLayoutConstraint)
     case width(NSLayoutConstraint)
     case height(NSLayoutConstraint)
     case centerX(NSLayoutConstraint)
@@ -34,9 +36,13 @@ public enum LayoutConstraint {
             return constraint
         case .left(let constraint):
             return constraint
+        case .leading(let constraint):
+            return constraint
         case .bottom(let constraint):
             return constraint
         case .right(let constraint):
+            return constraint
+        case .trailing(let constraint):
             return constraint
         case .width(let constraint):
             return constraint
@@ -55,8 +61,10 @@ public struct LayoutAnchor {
     enum Anchor {
         case top(NSLayoutYAxisAnchor)
         case left(NSLayoutXAxisAnchor)
+        case leading(NSLayoutXAxisAnchor)
         case bottom(NSLayoutYAxisAnchor)
         case right(NSLayoutXAxisAnchor)
+        case trailing(NSLayoutXAxisAnchor)
         case width(NSLayoutDimension?)
         case height(NSLayoutDimension?)
         case centerX(NSLayoutXAxisAnchor)
@@ -75,12 +83,20 @@ public struct LayoutAnchor {
         return LayoutAnchor(anchor: .left(otherAnchor), constant: constant, equality: equality, multiplier: 1)
     }
     
+    public static func leading(to otherAnchor: NSLayoutXAxisAnchor, constant: CGFloat = 0, equality: LayoutEquality = .equal) -> LayoutAnchor {
+        return LayoutAnchor(anchor: .leading(otherAnchor), constant: constant, equality: equality, multiplier: 1)
+    }
+    
     public static func bottom(to otherAnchor: NSLayoutYAxisAnchor, constant: CGFloat = 0, equality: LayoutEquality = .equal) -> LayoutAnchor {
         return LayoutAnchor(anchor: .bottom(otherAnchor), constant: constant, equality: equality, multiplier: 1)
     }
     
     public static func right(to otherAnchor: NSLayoutXAxisAnchor, constant: CGFloat = 0, equality: LayoutEquality = .equal) -> LayoutAnchor {
         return LayoutAnchor(anchor: .right(otherAnchor), constant: constant, equality: equality, multiplier: 1)
+    }
+    
+    public static func trailing(to otherAnchor: NSLayoutXAxisAnchor, constant: CGFloat = 0, equality: LayoutEquality = .equal) -> LayoutAnchor {
+        return LayoutAnchor(anchor: .trailing(otherAnchor), constant: constant, equality: equality, multiplier: 1)
     }
     
     public static func width(to otherAnchor: NSLayoutDimension? = nil, constant: CGFloat = 0, equality: LayoutEquality = .equal, multiplier: CGFloat = 1) -> LayoutAnchor {

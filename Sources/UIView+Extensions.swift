@@ -335,12 +335,18 @@ extension UIView {
             case .left(let otherAnchor):
                 let newConstraint = self.layout(self.leftAnchor, to: otherAnchor, constraint: constraint)
                 finalConstraints.append(.left(newConstraint))
+            case .leading(let otherAnchor):
+                let newConstraint = self.layout(self.leadingAnchor, to: otherAnchor, constraint: constraint)
+                finalConstraints.append(.leading(newConstraint))
             case .bottom(let otherAnchor):
                 let newConstraint = self.layout(self.bottomAnchor, to: otherAnchor, constraint: constraint)
                 finalConstraints.append(.bottom(newConstraint))
             case .right(let otherAnchor):
                 let newConstraint = self.layout(self.rightAnchor, to: otherAnchor, constraint: constraint)
                 finalConstraints.append(.right(newConstraint))
+            case .trailing(let otherAnchor):
+                let newConstraint = self.layout(self.trailingAnchor, to: otherAnchor, constraint: constraint)
+                finalConstraints.append(.trailing(newConstraint))
             case .width(let otherAnchor):
                 if let otherAnchor = otherAnchor {
                     let newConstraint = widthAnchor.layout(equalTo: otherAnchor, multiplier: constraint.multiplier, constant: constraint.constant)

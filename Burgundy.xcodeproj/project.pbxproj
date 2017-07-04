@@ -326,13 +326,14 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = FX8EL9YD72;
 						DevelopmentTeamName = "Hecho, LLC";
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					D27FC0081D1F16DA007FD427 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = FX8EL9YD72;
 						DevelopmentTeamName = "Hecho, LLC";
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					D27FC01D1D1F1735007FD427 = {
@@ -638,7 +639,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -659,7 +660,7 @@
 				PRODUCT_NAME = Burgundy;
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -671,7 +672,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.hecho.BurgundyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -683,7 +684,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.hecho.BurgundyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
