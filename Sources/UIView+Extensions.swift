@@ -323,34 +323,34 @@ extension UIView {
         return newConstraint
     }
     
-    @discardableResult public func layout(constraints: [LayoutAnchor]) -> [LayoutConstraint] {
+    @discardableResult public func layout(constraints: [LayoutAnchor]) -> [LayoutAxis : NSLayoutConstraint] {
         prepareForConstraints()
         
-        var finalConstraints: [LayoutConstraint] = []
+        var finalConstraints: [LayoutAxis : NSLayoutConstraint] = [:]
         for constraint in constraints {
             switch constraint.anchor {
             case .top(let otherAnchor):
                 let newConstraint = self.layout(self.topAnchor, to: otherAnchor, constraint: constraint)
-                finalConstraints.append(.top(newConstraint))
+                finalConstraints[.top] = newConstraint
             case .left(let otherAnchor):
                 let newConstraint = self.layout(self.leftAnchor, to: otherAnchor, constraint: constraint)
-                finalConstraints.append(.left(newConstraint))
+                finalConstraints[.left] = newConstraint
             case .leading(let otherAnchor):
                 let newConstraint = self.layout(self.leadingAnchor, to: otherAnchor, constraint: constraint)
-                finalConstraints.append(.leading(newConstraint))
+                finalConstraints[.leading] = newConstraint
             case .bottom(let otherAnchor):
                 let newConstraint = self.layout(self.bottomAnchor, to: otherAnchor, constraint: constraint)
-                finalConstraints.append(.bottom(newConstraint))
+                finalConstraints[.bottom] = newConstraint
             case .right(let otherAnchor):
                 let newConstraint = self.layout(self.rightAnchor, to: otherAnchor, constraint: constraint)
-                finalConstraints.append(.right(newConstraint))
+                finalConstraints[.right] = newConstraint
             case .trailing(let otherAnchor):
                 let newConstraint = self.layout(self.trailingAnchor, to: otherAnchor, constraint: constraint)
-                finalConstraints.append(.trailing(newConstraint))
+                finalConstraints[.trailing] = newConstraint
             case .width(let otherAnchor):
                 if let otherAnchor = otherAnchor {
                     let newConstraint = widthAnchor.layout(equalTo: otherAnchor, multiplier: constraint.multiplier, constant: constraint.constant)
-                    finalConstraints.append(.width(newConstraint))
+                    finalConstraints[.width] = newConstraint
                 } else {
                     let newConstraint: NSLayoutConstraint
                     switch constraint.equality {
@@ -361,12 +361,12 @@ extension UIView {
                     case .greaterThanOrEqual:
                         newConstraint = self.widthAnchor.layout(greaterThanOrEqualTo: constraint.constant)
                     }
-                    finalConstraints.append(.width(newConstraint))
+                    finalConstraints[.width] = newConstraint
                 }
             case .height(let otherAnchor):
                 if let otherAnchor = otherAnchor {
                     let newConstraint = heightAnchor.layout(equalTo: otherAnchor, multiplier: constraint.multiplier, constant: constraint.constant)
-                    finalConstraints.append(.height(newConstraint))
+                    finalConstraints[.height] = newConstraint
                 } else {
                     let newConstraint: NSLayoutConstraint
                     switch constraint.equality {
@@ -377,15 +377,15 @@ extension UIView {
                     case .greaterThanOrEqual:
                         newConstraint = self.heightAnchor.layout(greaterThanOrEqualTo: constraint.constant)
                     }
-                    finalConstraints.append(.height(newConstraint))
+                    finalConstraints[.height] = newConstraint
                 }
                 
             case .centerX(let otherAnchor):
                 let newConstraint = self.layout(self.centerXAnchor, to: otherAnchor, constraint: constraint)
-                finalConstraints.append(.centerX(newConstraint))
+                finalConstraints[.centerX] = newConstraint
             case .centerY(let otherAnchor):
                 let newConstraint = self.layout(self.centerYAnchor, to: otherAnchor, constraint: constraint)
-                finalConstraints.append(.centerY(newConstraint))
+                finalConstraints[.centerY] = newConstraint
             }
         }
         

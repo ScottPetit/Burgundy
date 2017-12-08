@@ -18,42 +18,17 @@ public enum LayoutEquality {
     case greaterThanOrEqual
 }
 
-public enum LayoutConstraint {
-    case top(NSLayoutConstraint)
-    case leading(NSLayoutConstraint)
-    case left(NSLayoutConstraint)
-    case bottom(NSLayoutConstraint)
-    case right(NSLayoutConstraint)
-    case trailing(NSLayoutConstraint)
-    case width(NSLayoutConstraint)
-    case height(NSLayoutConstraint)
-    case centerX(NSLayoutConstraint)
-    case centerY(NSLayoutConstraint)
-    
-    public var constraint: NSLayoutConstraint {
-        switch self {
-        case .top(let constraint):
-            return constraint
-        case .left(let constraint):
-            return constraint
-        case .leading(let constraint):
-            return constraint
-        case .bottom(let constraint):
-            return constraint
-        case .right(let constraint):
-            return constraint
-        case .trailing(let constraint):
-            return constraint
-        case .width(let constraint):
-            return constraint
-        case .height(let constraint):
-            return constraint
-        case .centerX(let constraint):
-            return constraint
-        case .centerY(let constraint):
-            return constraint
-        }
-    }
+public enum LayoutAxis: Int {
+    case top
+    case leading
+    case left
+    case bottom
+    case right
+    case trailing
+    case width
+    case height
+    case centerX
+    case centerY
 }
 
 public struct LayoutAnchor {
