@@ -6,10 +6,10 @@
 //  Copyright © 2016 Scott Petit. All rights reserved.
 //
 
-#if os(iOS) || os(tvOS)
-    import UIKit
-#elseif os(OSX)
-    import AppKit
+#if os(OSX)
+import AppKit
+#else
+import UIKit
 #endif
 
 extension NSLayoutXAxisAnchor {

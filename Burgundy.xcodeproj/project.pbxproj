@@ -21,9 +21,15 @@
 		D27FC05E1D1F19A9007FD427 /* NSLayoutAnchor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27FC05B1D1F19A2007FD427 /* NSLayoutAnchor+Extensions.swift */; };
 		D27FC0601D1F1B65007FD427 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27FC05F1D1F1B65007FD427 /* UIView+Extensions.swift */; };
 		D27FC0611D1F1B68007FD427 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27FC05F1D1F1B65007FD427 /* UIView+Extensions.swift */; };
-		D2A39AF01E01612500491B1D /* Burgundy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A39AEF1E01612500491B1D /* Burgundy.swift */; };
-		D2A39AF11E01612500491B1D /* Burgundy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A39AEF1E01612500491B1D /* Burgundy.swift */; };
-		D2A39AF21E01612500491B1D /* Burgundy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A39AEF1E01612500491B1D /* Burgundy.swift */; };
+		D29BB7D320408FB400FD0652 /* LayoutEquality.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29BB7D220408FB400FD0652 /* LayoutEquality.swift */; };
+		D29BB7D420408FB400FD0652 /* LayoutEquality.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29BB7D220408FB400FD0652 /* LayoutEquality.swift */; };
+		D29BB7D520408FB400FD0652 /* LayoutEquality.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29BB7D220408FB400FD0652 /* LayoutEquality.swift */; };
+		D29BB7D720408FBF00FD0652 /* LayoutAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29BB7D620408FBF00FD0652 /* LayoutAxis.swift */; };
+		D29BB7D820408FBF00FD0652 /* LayoutAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29BB7D620408FBF00FD0652 /* LayoutAxis.swift */; };
+		D29BB7D920408FBF00FD0652 /* LayoutAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29BB7D620408FBF00FD0652 /* LayoutAxis.swift */; };
+		D29BB7DB20408FC500FD0652 /* LayoutAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29BB7DA20408FC500FD0652 /* LayoutAnchor.swift */; };
+		D29BB7DC20408FC500FD0652 /* LayoutAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29BB7DA20408FC500FD0652 /* LayoutAnchor.swift */; };
+		D29BB7DD20408FC500FD0652 /* LayoutAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29BB7DA20408FC500FD0652 /* LayoutAnchor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +69,9 @@
 		D27FC0591D1F1912007FD427 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D27FC05B1D1F19A2007FD427 /* NSLayoutAnchor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayoutAnchor+Extensions.swift"; sourceTree = "<group>"; };
 		D27FC05F1D1F1B65007FD427 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
-		D2A39AEF1E01612500491B1D /* Burgundy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Burgundy.swift; sourceTree = "<group>"; };
+		D29BB7D220408FB400FD0652 /* LayoutEquality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutEquality.swift; sourceTree = "<group>"; };
+		D29BB7D620408FBF00FD0652 /* LayoutAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutAxis.swift; sourceTree = "<group>"; };
+		D29BB7DA20408FC500FD0652 /* LayoutAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutAnchor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,7 +151,9 @@
 				D27FC0021D1F16DA007FD427 /* Burgundy.h */,
 				D27FC05B1D1F19A2007FD427 /* NSLayoutAnchor+Extensions.swift */,
 				D27FC05F1D1F1B65007FD427 /* UIView+Extensions.swift */,
-				D2A39AEF1E01612500491B1D /* Burgundy.swift */,
+				D29BB7D620408FBF00FD0652 /* LayoutAxis.swift */,
+				D29BB7D220408FB400FD0652 /* LayoutEquality.swift */,
+				D29BB7DA20408FC500FD0652 /* LayoutAnchor.swift */,
 				D27FC0581D1F1906007FD427 /* Supporting Files */,
 			);
 			path = Sources;
@@ -319,7 +329,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Scott Petit";
 				TargetAttributes = {
 					D27FBFFE1D1F16DA007FD427 = {
@@ -439,8 +449,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D27FC0601D1F1B65007FD427 /* UIView+Extensions.swift in Sources */,
-				D2A39AF01E01612500491B1D /* Burgundy.swift in Sources */,
 				D27FC05C1D1F19A2007FD427 /* NSLayoutAnchor+Extensions.swift in Sources */,
+				D29BB7D320408FB400FD0652 /* LayoutEquality.swift in Sources */,
+				D29BB7DB20408FC500FD0652 /* LayoutAnchor.swift in Sources */,
+				D29BB7D720408FBF00FD0652 /* LayoutAxis.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,7 +469,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D27FC05D1D1F19A8007FD427 /* NSLayoutAnchor+Extensions.swift in Sources */,
-				D2A39AF11E01612500491B1D /* Burgundy.swift in Sources */,
+				D29BB7D820408FBF00FD0652 /* LayoutAxis.swift in Sources */,
+				D29BB7D420408FB400FD0652 /* LayoutEquality.swift in Sources */,
+				D29BB7DC20408FC500FD0652 /* LayoutAnchor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,8 +488,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D27FC0611D1F1B68007FD427 /* UIView+Extensions.swift in Sources */,
-				D2A39AF21E01612500491B1D /* Burgundy.swift in Sources */,
 				D27FC05E1D1F19A9007FD427 /* NSLayoutAnchor+Extensions.swift in Sources */,
+				D29BB7D520408FB400FD0652 /* LayoutEquality.swift in Sources */,
+				D29BB7DD20408FC500FD0652 /* LayoutAnchor.swift in Sources */,
+				D29BB7D920408FBF00FD0652 /* LayoutAxis.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,6 +538,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -529,6 +546,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -582,6 +600,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -589,6 +608,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

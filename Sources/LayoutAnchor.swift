@@ -1,35 +1,16 @@
 //
-//  Burgundy.swift
+//  LayoutAnchor.swift
 //  Burgundy
 //
-//  Created by Scott Petit on 12/14/16.
-//  Copyright © 2016 Scott Petit. All rights reserved.
+//  Created by Scott Petit on 2/23/18.
+//  Copyright © 2018 Scott Petit. All rights reserved.
 //
 
-#if os(iOS) || os(tvOS)
-    import UIKit
-#elseif os(OSX)
-    import AppKit
+#if os(OSX)
+import AppKit
+#else
+import UIKit
 #endif
-
-public enum LayoutEquality {
-    case equal
-    case lessThanOrEqual
-    case greaterThanOrEqual
-}
-
-public enum LayoutAxis: Int {
-    case top
-    case leading
-    case left
-    case bottom
-    case right
-    case trailing
-    case width
-    case height
-    case centerX
-    case centerY
-}
 
 public struct LayoutAnchor {
     
@@ -90,3 +71,4 @@ public struct LayoutAnchor {
         return LayoutAnchor(anchor: .centerX(otherAnchor), constant: constant, equality: equality, multiplier: 1)
     }
 }
+
