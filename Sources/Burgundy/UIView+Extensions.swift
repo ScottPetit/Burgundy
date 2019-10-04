@@ -5,7 +5,7 @@
 //  Created by Scott Petit on 6/25/16.
 //  Copyright © 2016 Scott Petit. All rights reserved.
 //
-// swiftlint:disable [ cyclomatic_complexity function_body_length ]
+// swiftlint:disable cyclomatic_complexity function_body_length
 
 import Foundation
 import UIKit
