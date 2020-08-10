@@ -8,6 +8,7 @@
 // swiftlint:disable cyclomatic_complexity function_body_length
 
 import Foundation
+#if !os(OSX)
 import UIKit
 
 extension UIView {
@@ -97,6 +98,18 @@ extension UIView {
         let left = layoutLeft(toView: view)
 
         return [top, right, bottom, left]
+    }
+
+    @discardableResult
+    public func layoutSafely(in view: UIView) -> [LayoutAxis: NSLayoutConstraint] {
+        let result = self.layout(constraints: [
+            .top(to: view.safeAreaLayoutGuide.topAnchor),
+            .bottom(to: view.safeAreaLayoutGuide.bottomAnchor),
+            .leading(to: view.safeAreaLayoutGuide.leadingAnchor),
+            .trailing(to: view.safeAreaLayoutGuide.trailingAnchor)
+        ])        
+
+        return result
     }
 
     @discardableResult public func layout(centerIn view: UIView) -> [NSLayoutConstraint] {
@@ -442,3 +455,4 @@ extension UIView {
         return finalConstraints
     }
 }
+#endif
