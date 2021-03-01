@@ -107,7 +107,7 @@ extension UIView {
             .bottom(to: view.safeAreaLayoutGuide.bottomAnchor),
             .leading(to: view.safeAreaLayoutGuide.leadingAnchor),
             .trailing(to: view.safeAreaLayoutGuide.trailingAnchor)
-        ])        
+        ])
 
         return result
     }
@@ -392,33 +392,39 @@ extension UIView {
         var finalConstraints: [LayoutAxis: NSLayoutConstraint] = [:]
         for constraint in constraints {
             switch constraint.anchor {
-            case .top(let otherAnchor):
+            case let .top(otherAnchor):
                 let newConstraint = self.layout(self.topAnchor, to: otherAnchor, constraint: constraint)
+                newConstraint.identifier = constraint.identifier
                 newConstraint.priority = constraint.priority
                 finalConstraints[.top] = newConstraint
-            case .left(let otherAnchor):
+            case let .left(otherAnchor):
                 let newConstraint = self.layout(self.leftAnchor, to: otherAnchor, constraint: constraint)
+                newConstraint.identifier = constraint.identifier
                 newConstraint.priority = constraint.priority
                 finalConstraints[.left] = newConstraint
-            case .leading(let otherAnchor):
+            case let .leading(otherAnchor):
                 let newConstraint = self.layout(self.leadingAnchor, to: otherAnchor, constraint: constraint)
+                newConstraint.identifier = constraint.identifier
                 newConstraint.priority = constraint.priority
                 finalConstraints[.leading] = newConstraint
-            case .bottom(let otherAnchor):
+            case let .bottom(otherAnchor):
                 let newConstraint = self.layout(self.bottomAnchor, to: otherAnchor, constraint: constraint)
+                newConstraint.identifier = constraint.identifier
                 newConstraint.priority = constraint.priority
                 finalConstraints[.bottom] = newConstraint
-            case .right(let otherAnchor):
+            case let .right(otherAnchor):
                 let newConstraint = self.layout(self.rightAnchor, to: otherAnchor, constraint: constraint)
+                newConstraint.identifier = constraint.identifier
                 newConstraint.priority = constraint.priority
                 finalConstraints[.right] = newConstraint
-            case .trailing(let otherAnchor):
+            case let .trailing(otherAnchor):
                 let newConstraint = self.layout(self.trailingAnchor, to: otherAnchor, constraint: constraint)
                 newConstraint.priority = constraint.priority
                 finalConstraints[.trailing] = newConstraint
-            case .width(let otherAnchor):
+            case let .width(otherAnchor):
                 if let otherAnchor = otherAnchor {
                     let newConstraint = widthAnchor.layout(equalTo: otherAnchor, multiplier: constraint.multiplier, constant: constraint.constant)
+                    newConstraint.identifier = constraint.identifier
                     newConstraint.priority = constraint.priority
                     finalConstraints[.width] = newConstraint
                 } else {
@@ -431,12 +437,14 @@ extension UIView {
                     case .greaterThanOrEqual:
                         newConstraint = self.widthAnchor.layout(greaterThanOrEqualTo: constraint.constant)
                     }
+                    newConstraint.identifier = constraint.identifier
                     newConstraint.priority = constraint.priority
                     finalConstraints[.width] = newConstraint
                 }
-            case .height(let otherAnchor):
+            case let .height(otherAnchor):
                 if let otherAnchor = otherAnchor {
                     let newConstraint = heightAnchor.layout(equalTo: otherAnchor, multiplier: constraint.multiplier, constant: constraint.constant)
+                    newConstraint.identifier = constraint.identifier
                     newConstraint.priority = constraint.priority
                     finalConstraints[.height] = newConstraint
                 } else {
@@ -449,16 +457,19 @@ extension UIView {
                     case .greaterThanOrEqual:
                         newConstraint = self.heightAnchor.layout(greaterThanOrEqualTo: constraint.constant)
                     }
+                    newConstraint.identifier = constraint.identifier
                     newConstraint.priority = constraint.priority
                     finalConstraints[.height] = newConstraint
                 }
 
-            case .centerX(let otherAnchor):
+            case let .centerX(otherAnchor):
                 let newConstraint = self.layout(self.centerXAnchor, to: otherAnchor, constraint: constraint)
+                newConstraint.identifier = constraint.identifier
                 newConstraint.priority = constraint.priority
                 finalConstraints[.centerX] = newConstraint
-            case .centerY(let otherAnchor):
+            case let .centerY(otherAnchor):
                 let newConstraint = self.layout(self.centerYAnchor, to: otherAnchor, constraint: constraint)
+                newConstraint.identifier = constraint.identifier
                 newConstraint.priority = constraint.priority
                 finalConstraints[.centerY] = newConstraint
             }

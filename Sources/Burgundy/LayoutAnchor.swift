@@ -31,44 +31,63 @@ public struct LayoutAnchor {
     let equality: LayoutEquality
     let multiplier: CGFloat
     let priority: UILayoutPriority
+    let identifier: String
 
-    public static func top(to otherAnchor: NSLayoutYAxisAnchor, constant: CGFloat = 0, equality: LayoutEquality = .equal, priority: UILayoutPriority = .required) -> LayoutAnchor {
-        return LayoutAnchor(anchor: .top(otherAnchor), constant: constant, equality: equality, multiplier: 1, priority: priority)
+    public static func top(to otherAnchor: NSLayoutYAxisAnchor, constant: CGFloat = 0, equality: LayoutEquality = .equal, priority: UILayoutPriority = .required, label: String = "", file: StaticString = #file, line: UInt = #line) -> LayoutAnchor {
+        let identifier = self.identifier(for: label, file: file, line: line)
+        return LayoutAnchor(anchor: .top(otherAnchor), constant: constant, equality: equality, multiplier: 1, priority: priority, identifier: identifier)
     }
 
-    public static func left(to otherAnchor: NSLayoutXAxisAnchor, constant: CGFloat = 0, equality: LayoutEquality = .equal, priority: UILayoutPriority = .required) -> LayoutAnchor {
-        return LayoutAnchor(anchor: .left(otherAnchor), constant: constant, equality: equality, multiplier: 1, priority: priority)
+    public static func left(to otherAnchor: NSLayoutXAxisAnchor, constant: CGFloat = 0, equality: LayoutEquality = .equal, priority: UILayoutPriority = .required, label: String = "", file: StaticString = #file, line: UInt = #line) -> LayoutAnchor {
+        let identifier = self.identifier(for: label, file: file, line: line)
+        return LayoutAnchor(anchor: .left(otherAnchor), constant: constant, equality: equality, multiplier: 1, priority: priority, identifier: identifier)
     }
 
-    public static func leading(to otherAnchor: NSLayoutXAxisAnchor, constant: CGFloat = 0, equality: LayoutEquality = .equal, priority: UILayoutPriority = .required) -> LayoutAnchor {
-        return LayoutAnchor(anchor: .leading(otherAnchor), constant: constant, equality: equality, multiplier: 1, priority: priority)
+    public static func leading(to otherAnchor: NSLayoutXAxisAnchor, constant: CGFloat = 0, equality: LayoutEquality = .equal, priority: UILayoutPriority = .required, label: String = "", file: StaticString = #file, line: UInt = #line) -> LayoutAnchor {
+        let identifier = self.identifier(for: label, file: file, line: line)
+        return LayoutAnchor(anchor: .leading(otherAnchor), constant: constant, equality: equality, multiplier: 1, priority: priority, identifier: identifier)
     }
 
-    public static func bottom(to otherAnchor: NSLayoutYAxisAnchor, constant: CGFloat = 0, equality: LayoutEquality = .equal, priority: UILayoutPriority = .required) -> LayoutAnchor {
-        return LayoutAnchor(anchor: .bottom(otherAnchor), constant: constant, equality: equality, multiplier: 1, priority: priority)
+    public static func bottom(to otherAnchor: NSLayoutYAxisAnchor, constant: CGFloat = 0, equality: LayoutEquality = .equal, priority: UILayoutPriority = .required, label: String = "", file: StaticString = #file, line: UInt = #line) -> LayoutAnchor {
+        let identifier = self.identifier(for: label, file: file, line: line)
+        return LayoutAnchor(anchor: .bottom(otherAnchor), constant: constant, equality: equality, multiplier: 1, priority: priority, identifier: identifier)
     }
 
-    public static func right(to otherAnchor: NSLayoutXAxisAnchor, constant: CGFloat = 0, equality: LayoutEquality = .equal, priority: UILayoutPriority = .required) -> LayoutAnchor {
-        return LayoutAnchor(anchor: .right(otherAnchor), constant: constant, equality: equality, multiplier: 1, priority: priority)
+    public static func right(to otherAnchor: NSLayoutXAxisAnchor, constant: CGFloat = 0, equality: LayoutEquality = .equal, priority: UILayoutPriority = .required, label: String = "", file: StaticString = #file, line: UInt = #line) -> LayoutAnchor {
+        let identifier = self.identifier(for: label, file: file, line: line)
+        return LayoutAnchor(anchor: .right(otherAnchor), constant: constant, equality: equality, multiplier: 1, priority: priority, identifier: identifier)
     }
 
-    public static func trailing(to otherAnchor: NSLayoutXAxisAnchor, constant: CGFloat = 0, equality: LayoutEquality = .equal, priority: UILayoutPriority = .required) -> LayoutAnchor {
-        return LayoutAnchor(anchor: .trailing(otherAnchor), constant: constant, equality: equality, multiplier: 1, priority: priority)
+    public static func trailing(to otherAnchor: NSLayoutXAxisAnchor, constant: CGFloat = 0, equality: LayoutEquality = .equal, priority: UILayoutPriority = .required, label: String = "", file: StaticString = #file, line: UInt = #line) -> LayoutAnchor {
+        let identifier = self.identifier(for: label, file: file, line: line)
+        return LayoutAnchor(anchor: .trailing(otherAnchor), constant: constant, equality: equality, multiplier: 1, priority: priority, identifier: identifier)
     }
 
-    public static func width(to otherAnchor: NSLayoutDimension? = nil, constant: CGFloat = 0, equality: LayoutEquality = .equal, multiplier: CGFloat = 1, priority: UILayoutPriority = .required) -> LayoutAnchor {
-        return LayoutAnchor(anchor: .width(otherAnchor), constant: constant, equality: equality, multiplier: multiplier, priority: priority)
+    public static func width(to otherAnchor: NSLayoutDimension? = nil, constant: CGFloat = 0, equality: LayoutEquality = .equal, multiplier: CGFloat = 1, priority: UILayoutPriority = .required, label: String = "", file: StaticString = #file, line: UInt = #line) -> LayoutAnchor {
+        let identifier = self.identifier(for: label, file: file, line: line)
+        return LayoutAnchor(anchor: .width(otherAnchor), constant: constant, equality: equality, multiplier: multiplier, priority: priority, identifier: identifier)
     }
 
-    public static func height(to otherAnchor: NSLayoutDimension? = nil, constant: CGFloat = 0, equality: LayoutEquality = .equal, multiplier: CGFloat = 1, priority: UILayoutPriority = .required) -> LayoutAnchor {
-        return LayoutAnchor(anchor: .height(otherAnchor), constant: constant, equality: equality, multiplier: multiplier, priority: priority)
+    public static func height(to otherAnchor: NSLayoutDimension? = nil, constant: CGFloat = 0, equality: LayoutEquality = .equal, multiplier: CGFloat = 1, priority: UILayoutPriority = .required, label: String = "", file: StaticString = #file, line: UInt = #line) -> LayoutAnchor {
+        let identifier = self.identifier(for: label, file: file, line: line)
+        return LayoutAnchor(anchor: .height(otherAnchor), constant: constant, equality: equality, multiplier: multiplier, priority: priority, identifier: identifier)
     }
 
-    public static func centerY(to otherAnchor: NSLayoutYAxisAnchor, constant: CGFloat = 0, equality: LayoutEquality = .equal, priority: UILayoutPriority = .required) -> LayoutAnchor {
-        return LayoutAnchor(anchor: .centerY(otherAnchor), constant: constant, equality: equality, multiplier: 1, priority: priority)
+    public static func centerY(to otherAnchor: NSLayoutYAxisAnchor, constant: CGFloat = 0, equality: LayoutEquality = .equal, priority: UILayoutPriority = .required, label: String = "", file: StaticString = #file, line: UInt = #line) -> LayoutAnchor {
+        let identifier = self.identifier(for: label, file: file, line: line)
+        return LayoutAnchor(anchor: .centerY(otherAnchor), constant: constant, equality: equality, multiplier: 1, priority: priority, identifier: identifier)
     }
 
-    public static func centerX(to otherAnchor: NSLayoutXAxisAnchor, constant: CGFloat = 0, equality: LayoutEquality = .equal, priority: UILayoutPriority = .required) -> LayoutAnchor {
-        return LayoutAnchor(anchor: .centerX(otherAnchor), constant: constant, equality: equality, multiplier: 1, priority: priority)
+    public static func centerX(to otherAnchor: NSLayoutXAxisAnchor, constant: CGFloat = 0, equality: LayoutEquality = .equal, priority: UILayoutPriority = .required, label: String = "", file: StaticString = #file, line: UInt = #line) -> LayoutAnchor {
+        let identifier = self.identifier(for: label, file: file, line: line)
+        return LayoutAnchor(anchor: .centerX(otherAnchor), constant: constant, equality: equality, multiplier: 1, priority: priority, identifier: identifier)
+    }
+
+    private static func identifier(for label: String, file: StaticString, line: UInt) -> String {
+        if label.isEmpty {
+            return "\(file)#\(line)"
+        } else {
+            return "\(label)@\(file)#\(line)"
+        }
     }
 }
